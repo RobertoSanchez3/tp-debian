@@ -1,0 +1,33 @@
+services:
+
+  django:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: lolcat-django
+
+    restart: unless-stopped
+
+    env_file:
+      - .env
+
+    ports:
+      - "8000:8000"
+
+    volumes:
+      - django_data:/data
+      - ./certs/ca.pem:/certs/ca.pem:ro
+
+    extra_hosts:
+      - "SRV-AD.entreprise.local:10.0.2.10"
+
+    networks:
+      - web_network
+
+volumes:
+  django_data:
+
+networks:
+  web_network:
+    driver: bridge

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion - LOLCAT</title>
+
+    <style>
+        body {
+            background: #222;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .container {
+            background: #333;
+            padding: 40px;
+            margin: auto;
+            width: 350px;
+            border-radius: 12px;
+        }
+
+        input {
+            display: block;
+            margin: 15px auto;
+            padding: 12px;
+            width: 90%;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: #00aaff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>LOLCAT LOGIN</h1>
+
+    <p>Authentification Active Directory</p>
+
+    {% if form.errors %}
+        <p style="color:red">
+            Identifiants incorrects.
+        </p>
+    {% endif %}
+
+    <form method="post">
+
+        {% csrf_token %}
+
+        <input
+            type="text"
+            name="username"
+            placeholder="Identifiant AD"
+            required
+        >
+
+        <input
+            type="password"
+            name="password"
+            placeholder="Mot de passe"
+            required
+        >
+
+        <button type="submit">
+            Se connecter
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

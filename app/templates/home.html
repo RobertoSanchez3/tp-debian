@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>LOLCAT - Bienvenue</title>
+
+    <style>
+
+        body {
+            background: #171717;
+            color: #00ff88;
+            font-family: monospace;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        pre {
+            color: #ffcc00;
+            font-size: 18px;
+            display: inline-block;
+            text-align: left;
+        }
+
+        .account {
+            background: #292929;
+            padding: 25px;
+            margin: 30px auto;
+            width: 450px;
+            border-radius: 10px;
+        }
+
+        a {
+            color: #00aaff;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>WELCOME TO LOLCAT SERVER!</h1>
+
+    <pre>
+ /\_/\
+( o.o )
+ > ^ <
+    </pre>
+
+    <h2>CONGRATULATIONS!</h2>
+
+    <p>Authentification Active Directory réussie.</p>
+
+    <div class="account">
+
+        <h2>Informations du compte</h2>
+
+        <p>
+            <strong>Identifiant :</strong>
+            {{ username }}
+        </p>
+
+        <p>
+            <strong>Prénom :</strong>
+            {{ first_name }}
+        </p>
+
+        <p>
+            <strong>Nom :</strong>
+            {{ last_name }}
+        </p>
+
+        <p>
+            <strong>Email :</strong>
+            {{ email }}
+        </p>
+
+    </div>
+
+    <a href="/logout/">Se déconnecter</a>
+
+</body>
+
+</html>
